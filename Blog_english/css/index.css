@@ -1,0 +1,133 @@
+/* index.css */
+
+/* Estilos Generales del Cuerpo (Body) */
+.bodyy{
+    font-family: Arial, sans-serif; /* Establece la fuente del texto a Arial o una fuente sans-serif genérica */
+    line-height: 1.6; /* Define el espaciado entre líneas del texto */
+    margin: 0; /* Elimina el margen exterior predeterminado del body */
+    padding: 0; /* Elimina el relleno interior predeterminado del body */
+    background-color: #f4f4f4; /* Color de fondo general de la página */
+    color: #333; /* Color de texto predeterminado */
+    background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el elemento, recortando si es necesario */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-image: url(https://i.pinimg.com/236x/91/1a/0f/911a0fe6868cf62600e03f7acba21a52.jpg);
+    /* Adiciones para el "Sticky Footer" (Pie de página fijo en la parte inferior) */
+    display: flex; /* Convierte el body en un contenedor flexbox */
+    flex-direction: column; /* Organiza los elementos hijos del body en una columna vertical */
+    min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana (viewport) */
+}
+
+/* Estilos del Encabezado (Header) */
+.header{
+    background: #03783a; /* Color de fondo del encabezado */
+    color: #fff; /* Color del texto del encabezado */
+    padding: 1rem 0; /* Relleno superior e inferior del encabezado */
+    text-align: center; /* Centra el texto dentro del encabezado */
+}
+
+header h1 {
+    margin: 0; /* Elimina el margen del título h1 */
+    font-size: 2em; /* Tamaño de fuente del título h1 */
+}
+
+/* Estilos de la Navegación (Nav) */
+nav ul {
+    padding: 0; /* Elimina el relleno de la lista no ordenada */
+    list-style: none; /* Elimina los marcadores de lista */
+}
+
+nav ul li {
+    display: inline; /* Muestra los elementos de la lista en línea (horizontalmente) */
+    margin-right: 20px; /* Margen a la derecha entre los elementos de la lista */
+}
+
+nav ul li a {
+    color: #fff; /* Color de los enlaces de navegación */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+/* Estilos del Contenido Principal */
+/* Asumiendo que el contenido principal está dentro de un <div> directamente dentro del body, antes del footer. */
+/* Si tienes una estructura más compleja, podrías necesitar envolver el contenido principal en una etiqueta <main> o similar. */
+body > div:nth-of-type(1) { /* Selecciona el primer div que es hijo directo del body (el que contiene el mensaje de bienvenida y el botón) */
+    padding: 40px; /* Aumentado el relleno para hacer el contenedor más grande verticalmente */
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente para el contenido principal */
+    margin: 20px auto; /* Margen superior e inferior de 20px y centrado horizontal automático */
+    max-width: 900px; /* Ancho máximo del div */
+    width: 90%; /* Hace el contenedor el 90% del ancho disponible para que crezca más horizontalmente si hay espacio */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del div */
+    border-radius: 8px; /* Bordes redondeados para el div */
+    text-align: center; /* Centra el texto dentro del div */
+
+    /* Adición para el "Sticky Footer" */
+    flex-grow: 1; /* Permite que este div crezca y ocupe el espacio disponible, empujando el footer hacia abajo */
+}
+
+div p {
+    font-size: 1.1em; /* Tamaño de fuente para los párrafos dentro de los divs */
+    color: #000000; /* Color del texto de los párrafos */
+}
+
+
+button {
+    background-color: #2f45c2; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    padding: 10px 20px; /* Relleno interior del botón */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 5px; /* Bordes redondeados para el botón */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+    font-size: 1em; /* Tamaño de fuente del botón */
+    margin-top: 50px; /* Aumentado el margen superior para mover el botón más abajo */
+}
+
+button a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces dentro de los botones */
+    color: white; /* Color del texto del enlace dentro del botón */
+}
+
+button:hover{
+    background-color: #4a56a5; /* Un tono ligeramente más oscuro */
+    transform: translateY(-3px); /* Mueve el botón 3px hacia arriba */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Agrega una sombra al pasar el mouse */
+}
+
+
+/* Estilos del Pie de Página (Footer) */
+footer {
+    text-align: center; /* Centra el texto dentro del pie de página */
+    padding: 10px; /* Relleno interior del pie de página */
+    background: #03783a; 
+
+    color: #fff; /* Color del texto del pie de página */
+    /* Se eliminó margin-top ya que flexbox maneja el espaciado */
+    border-radius: 8px; /* Bordes redondeados para el pie de página */
+}
+
+footer div {
+    display: flex; /* Convierte el div dentro del footer en un contenedor flexbox */
+    justify-content: center; /* Centra los elementos hijos horizontalmente */
+    align-items: center; /* Centra los elementos hijos verticalmente */
+    margin-top: 10px; /* Margen superior para el div de redes sociales */
+    background: transparent; /* Hace transparente el fondo de este div interior */
+    box-shadow: none; /* Elimina la sombra de este div interior */
+}
+
+footer div a {
+    margin: 0 10px; /* Margen horizontal entre los enlaces de redes sociales */
+}
+
+footer div img {
+    width: 50px; /* Ancho de las imágenes de redes sociales */
+    height: 50px; /* Alto de las imágenes de redes sociales */
+    border-radius: 50%; /* Hace las imágenes circulares */
+}
+
+/* Diseño Responsivo (Media Queries) */
+@media (max-width: 768px) {
+    /* Estilos aplicados cuando el ancho de la ventana es de 768px o menos */
+    nav ul li {
+        display: block; /* Muestra los elementos de la lista de navegación como bloques (verticalmente) */
+        margin-bottom: 10px; /* Margen inferior entre los elementos de la lista de navegación */
+    }
+}

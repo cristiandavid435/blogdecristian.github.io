@@ -1,0 +1,216 @@
+/* style.css */
+
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+body > div:nth-of-type(1) { /* Selecciona el primer div que es hijo directo del body (el que contiene el mensaje de bienvenida y el botón) */
+    padding: 40px; /* Aumentado el relleno para hacer el contenedor más grande verticalmente */
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente para el contenido principal */
+    margin: 20px auto; /* Margen superior e inferior de 20px y centrado horizontal automático */
+    max-width: 900px; /* Ancho máximo del div */
+    width: 90%; /* Hace el contenedor el 90% del ancho disponible para que crezca más horizontalmente si hay espacio */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del div */
+    border-radius: 8px; /* Bordes redondeados para el div */
+    text-align: center; /* Centra el texto dentro del div */
+
+    /* Adición para el "Sticky Footer" */
+    flex-grow: 1; /* Permite que este div crezca y ocupe el espacio disponible, empujando el footer hacia abajo */
+}
+
+
+
+
+
+/* Header Styles */
+header {
+    background: #03783a;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Navigation Styles */
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Blog Explanation Section */
+
+.explicacion_del_blog{
+    background-color: #03783a;
+    color: #fff;
+}
+
+/* Articles/Posts Section */
+.articulos.o.posts { /* Use the exact class name from your HTML */
+    display: grid;
+    /* Main article on left (2fr), aside on right (1fr) */
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* Style for the main article to take up its grid space */
+.articulos.o.posts > article {
+    grid-column: 1 / 2; /* Explicitly place the main article in the first column */
+}
+
+/* New styles for the wrapper of less important articles */
+.articulos_menos_importantes {
+    grid-column: 2 / 3; /* Place this wrapper in the second column */
+    display: flex; /* Use flexbox for its content */
+    flex-direction: column; /* Stack articles vertically within this wrapper */
+    gap: 15px; /* Space between the smaller articles */
+}
+
+/* Styles for articles inside the 'articulos_menos_importantes' div */
+.articulos_menos_importantes aside article {
+    background: #fff;
+    padding: 15px; /* Slightly less padding for smaller articles */
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+    transition: transform 0.2s;
+}
+
+.articulos_menos_importantes aside article:hover {
+    transform: translateY(-3px); /* Less pronounced hover effect */
+}
+
+.articulos_menos_importantes aside article h3 {
+    font-size: 1.1em; /* Smaller heading for aside articles */
+    margin-top: 0;
+}
+
+.articulos_menos_importantes aside article p {
+    font-size: 0.85em; /* Smaller text for aside articles */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Add ellipsis for truncated text */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.articulos_menos_importantes aside article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px; /* Less margin for images */
+}
+
+video{
+    width: 500px;
+    height: 500px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+article {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+article a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+article h2, article h3 {
+    color: #333;
+    margin-top: 0;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+article p {
+    font-size: 0.95em;
+}
+
+
+footer {
+    text-align: center; /* Centra el texto dentro del pie de página */
+    padding: 10px; /* Relleno interior del pie de página */
+    background: #03783a; 
+
+    color: #fff; /* Color del texto del pie de página */
+    /* Se eliminó margin-top ya que flexbox maneja el espaciado */
+    border-radius: 8px; /* Bordes redondeados para el pie de página */
+}
+
+footer div {
+    display: flex; /* Convierte el div dentro del footer en un contenedor flexbox */
+    justify-content: center; /* Centra los elementos hijos horizontalmente */
+    align-items: center; /* Centra los elementos hijos verticalmente */
+    margin-top: 10px; /* Margen superior para el div de redes sociales */
+    background: transparent; /* Hace transparente el fondo de este div interior */
+    box-shadow: none; /* Elimina la sombra de este div interior */
+}
+
+footer div a {
+    margin: 0 10px; /* Margen horizontal entre los enlaces de redes sociales */
+}
+
+footer div img {
+    width: 50px; /* Ancho de las imágenes de redes sociales */
+    height: 50px; /* Alto de las imágenes de redes sociales */
+    border-radius: 50%; /* Hace las imágenes circulares */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .articulos.o.posts {
+        grid-template-columns: 1fr; /* Stacks columns on smaller screens */
+    }
+
+    .articulos_menos_importantes {
+        grid-column: 1 / 2; /* Make this wrapper take full width on smaller screens */
+        flex-direction: row; /* Arrange side-by-side if there's enough room */
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center;
+    }
+
+    .articulos_menos_importantes aside article {
+        width: calc(50% - 15px); /* Two columns for smaller articles on mobile, adjust for gap */
+    }
+}
